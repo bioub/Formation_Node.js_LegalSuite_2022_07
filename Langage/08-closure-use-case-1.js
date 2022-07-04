@@ -22,6 +22,7 @@ for (var i=0; i<3; i++) {
 //                                                   3    3    3
 
 function externe(msg) {
+  // closure
   return () => {
     console.log(msg);
   };
@@ -32,6 +33,7 @@ for (var i=0; i<3; i++) {
 }
 
 for (let i=0; i<3; i++) {
+  // closure (grace à let)
   setTimeout(() => {
     console.log(i);
   }, 1000);
