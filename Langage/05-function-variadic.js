@@ -1,7 +1,7 @@
 function sum1(a, b) {
   let result = a + b;
 
-  // pseudo-variable (this et arguments)
+  // pseudo-variable (this, arguments, super, new.target)
   // elle est créée au moment de l'appel
   // arguments n'est pas de type Array
   for (let i = 2; i < arguments.length; i++) {
