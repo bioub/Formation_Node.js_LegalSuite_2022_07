@@ -13,7 +13,7 @@ for (const n of names) {
   }
 }
 
-// Programmation fonctionnelle
+// Programmation fonctionnelle (ES5)
 const newArray2 = names
   .filter((n) => n.length === 4)
   .map((n) => n.toUpperCase());

@@ -41,9 +41,13 @@ console.log(Math.sum); // undefined
 // 2 syntaxes possibles
 // Object literal
 // Use case :
-// - pour des objets simple à créer
-// - si plusieurs instances, ne pas mettre de méthode
+// - pour les objets qui ne sont créés qu'une fois
+// - pour des objets multiples, simples à créer et sans méthodes
 // - l'objet n'a pas de type autre que Object
+const MyMath = {
+  sum: (a, b) => a + b,
+};
+
 const coords1 = {
   x: 1,
   y: 2,
@@ -69,8 +73,7 @@ console.log(coords1.getType === coords2.getType); // false () => 'Coords' === ()
 
 // Constructor (fonction constructeur)
 // use case
-// - pour des objets complexe à créer
-// - si plusieurs instances, Ok pour y mettre des méthodes
+// - pour des objets multiples, complexes ou avec des méthodes-
 // - l'objet aura d'autre type que Object
 // - possibilité de simuler de l'héritage
 
@@ -91,8 +94,10 @@ console.log(romain.hello()); // Hello my name is Romain
 
 
 const eric = new Contact('Eric');
-console.log(eric.prenom); // Romain
-console.log(eric.hello()); // Hello my name is Romain
+console.log(eric.prenom); // 1 - Romain
+console.log(eric.hello()); // 2 - Hello my name is Romain
+console.log(eric.hasOwnProperty('prenom')); // 3 - true
+console.log(eric.hasOwnProperty('hello')); // 3 - false
 
 console.log(romain.hello == eric.hello); // true (la fonction n'est pas dupliquée)
 
