@@ -1,4 +1,5 @@
 // function (exports, require, module, __filename, __dirname) {
+
 'use strict';
 
 const getRandom = require('./getRandom');

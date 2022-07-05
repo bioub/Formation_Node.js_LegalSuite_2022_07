@@ -1,5 +1,5 @@
 // function (exports, require, module, __filename, __dirname) {
-  
+
 'use strict';
 
 function getRandom() {
@@ -8,6 +8,6 @@ function getRandom() {
 
 // si une valeur à exporter
 // on peut remplacer exports par une fonction par exemple :
-module.exports = getRandom;
+export default getRandom;
 
 // }
