@@ -54,7 +54,13 @@ const coords1 = {
   getType: () => 'Coords',
 };
 
-coords1.z = 3;
+// coords1.z = 3;
+Object.defineProperty(coords1, 'z', {
+  value: 3,
+  // writable: false,
+  // enumerable: false,
+  // configurable: false,
+});
 
 console.log(coords1.x, coords1.y, coords1.z);
 
@@ -103,3 +109,29 @@ console.log(romain.hello == eric.hello); // true (la fonction n'est pas dupliqu�
 
 console.log(romain instanceof Contact); // true
 console.log(romain instanceof Object); // true
+
+
+// 2e syntaxe pour accéder aux clés : []
+console.log(coords1.x);
+console.log(coords1['x']);
+
+// les crochets sont plus dynamiques
+const key = 'x';
+console.log(coords1[key]);
+
+// Boucler sur les clés d'un objet
+
+// Ancienne syntaxe (à éviter)
+for (const key in coords1) {
+  console.log(coords1[key]);
+}
+
+// Nouvelle syntaxe (recommandée)
+for (const key of Object.keys(coords1)) {
+  console.log(coords1[key]);
+}
+
+// Pour boucler sur les clés valeurs :
+for (const [key, value] of Object.entries(coords1)) {
+  console.log(key, value);
+}

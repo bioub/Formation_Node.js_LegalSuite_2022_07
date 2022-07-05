@@ -1,3 +1,5 @@
+'use strict';
+
 // Portée globale
 // globalVar = 'globalVar'; // plus possible en mode strict (ES5+)
 globalThis.globalVar = 'globalVar'; // globalThis (ES2020)
