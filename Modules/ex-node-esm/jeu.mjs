@@ -1,5 +1,6 @@
 import { createInterface } from 'readline';
 // importer getRandomInt
+import { getRandomInt } from './random.mjs';
 
 class Jeu {
   constructor(options = {}) {
@@ -45,3 +46,4 @@ class Jeu {
 }
 
 // exporter Jeu
+export default Jeu;
