@@ -1,2 +1,12 @@
-{"dependencies":{"rxjs":"^7.5.5"}}
-
+{
+  "dependencies": {
+    "rxjs": "^7.5.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "scripts": {
+    "start": "node 13-net-server.js",
+    "start:dev": "nodemon 13-net-server.js"
+  }
+}
