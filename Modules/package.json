@@ -6,6 +6,6 @@
     "prettier": "^2.7.1"
   },
   "scripts": {
-    "prettier": "prettier --write \"**.{js,json,mjs}\""
+    "prettier": "prettier --write \"**/*.{js,json,mjs}\""
   }
 }

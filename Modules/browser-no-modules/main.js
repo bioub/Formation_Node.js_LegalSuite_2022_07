@@ -6,4 +6,4 @@
   const btnEl3 = createButton('Button 3');
 
   document.body.append(btnEl1, btnEl2, btnEl3);
-}());
+})();

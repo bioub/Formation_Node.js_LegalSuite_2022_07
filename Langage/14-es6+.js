@@ -31,7 +31,6 @@ console.log(multiply(...nbs));
 const newNbs = [1, 2, ...nbs, 6, 7];
 const cloneNbs = [...nbs]; // shallow clone (pas récursif)
 
-
 // const fullName = 'Romain Bohdanowicz';
 // const tmp = fullName.split(' ');
 // const firstName = tmp[0];
@@ -47,7 +46,7 @@ const [one, two, ...otherNbs] = newNbs;
 const [three, four, five, six = 6] = nbs;
 
 // Object Destructuring ES6
-const coords = {x: 1, y: 2};
+const coords = { x: 1, y: 2 };
 //    { x: 1     , y: 2      }
 const { x: xValue, y: yValue } = coords;
 
@@ -60,5 +59,8 @@ const user = {
 };
 
 //    { x: 1     , y: 2      }
-const { x , y, z = 0 } = coords;
+const { x, y, z = 0 } = coords;
 
+// ES2018 REST ET SPREAD sur objet
+const cloneCoords = { ...coords }; // SPREAD
+const { x: maVarX, ...otherKeys } = coords; // REST

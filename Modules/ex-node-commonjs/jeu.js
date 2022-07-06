@@ -1,6 +1,6 @@
-const readline = require('readline');
-const chalk = require('chalk');
-const { getRandomInt } = require('./random');
+const readline = require('readline'); // binaire de Node (sources : lib/readline.js)
+const chalk = require('chalk'); // install npm (node_modules/chalk/source/index.js via la clé main du package.json)
+const { getRandomInt } = require('./random'); // fichier local (commence toujours pas ./ ou ../)
 
 class Jeu {
   constructor(options = {}) {
