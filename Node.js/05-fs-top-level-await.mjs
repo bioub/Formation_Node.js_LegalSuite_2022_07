@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'fs/promises';
 
-// ES2022 Top Level
-// On peut se passe de la fonction async
+// ES2022 Top Level Await
+// On peut se passer de la fonction async
 // A condition d'utiliser les modules ESM
 try {
   const buffer = await readFile('.prettierrc');

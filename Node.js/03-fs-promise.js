@@ -42,7 +42,7 @@ const fs = require('fs/promises'); // Depuis Node 14
 //     console.log(err.message);
 //   })
 
-// Avec les fonction fléchée plus compactes
+// Avec les fonctions fléchées plus compactes
 fs.readFile('.prettierrc')
   .then((buffer) => fs.writeFile('.prettierrc.copy', buffer))
   .then(() => console.log('Copy done'))

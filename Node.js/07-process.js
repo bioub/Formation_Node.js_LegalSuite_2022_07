@@ -2,7 +2,9 @@
 // process.exit(1); // kill node avec erreur
 // process.exit(2); // kill node avec erreur
 
-console.log(process.cwd()); // Current Working Dir
+process.chdir(__dirname); // equivalent à cd /Users/romain/Desktop/Formation-Node.js/Node.js
+
+console.log(process.cwd()); // Current Working Dir, equivalent à pwd
 console.log(process.getuid()); // User Id qui execute Node
 
 console.log(process.memoryUsage());

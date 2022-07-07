@@ -53,6 +53,10 @@ function readlines(path) {
   });
 }
 
+const rl = readline.createInterface({
+  input: fs.createReadStream('.prettierrc'),
+});
+
 // Version Observable de lire un fichier ligne par ligne (en async)
 let lineNb = 1;
 readlines('.prettierrc')
@@ -63,10 +67,6 @@ readlines('.prettierrc')
 // Version Async Iteration de lire un fichier ligne par ligne (en async)
 (async () => {
   let lineNb = 1;
-
-  const rl = readline.createInterface({
-    input: fs.createReadStream('.prettierrc'),
-  });
 
   for await (const line of rl) {
     console.log((lineNb++) + ' ' + line);

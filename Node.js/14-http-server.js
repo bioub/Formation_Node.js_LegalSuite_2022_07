@@ -2,8 +2,20 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200; // par défaut
-  res.setHeader('Content-type', 'text/plain');
-  res.write('Bonjour');
+
+  if (req.method === 'GET' && req.url === '/') {
+    res.setHeader('Content-type', 'text/plain');
+    res.write('Home');
+  }
+  else if (req.method === 'GET' && req.url === '/hello') {
+    res.setHeader('Content-type', 'text/html');
+    res.write('<h2>Hello</h2>');
+  } else {
+    res.statusCode = 404;
+    res.setHeader('Content-type', 'text/html');
+    res.write('<h2>Not found</h2>');
+  }
+
   res.end();
 });
 

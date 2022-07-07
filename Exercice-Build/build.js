@@ -2,6 +2,9 @@ const fs = require("fs/promises");
 const path = require("path");
 const md5 = require("md5");
 const { minify } = require("terser");
+const minimist = require('minimist');
+
+const args = minimist(process.argv.slice(2));
 
 const distPath = path.resolve(__dirname, "dist");
 const srcPath = path.resolve(__dirname, "src");
@@ -22,7 +25,14 @@ async function buildJs() {
     fs.readFile(indexJsPath),
   ]);
 
-  await fs.writeFile(appJsDistPath, Buffer.concat(buffers));
+  let content = Buffer.concat(buffers).toString('utf-8');
+
+  if (args.minify) {
+    const { code } = await minify(content);
+    content = code;
+  }
+
+  await fs.writeFile(appJsDistPath, content);
 }
 
 async function buildHtml() {

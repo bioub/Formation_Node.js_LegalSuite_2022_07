@@ -7,5 +7,5 @@ console.log(path.join('Node.js', '.prettierrc'));
 console.log(path.resolve('Node.js', '.prettierrc'));
 
 // Bonne pratique pour faire référence à des chemins :
-console.log(path.resolve(__dirname, '.prettierrc'));
-console.log(path.resolve(__dirname, '.prettierrc'));
+console.log(path.join(__dirname, '..', 'Node.js', '.prettierrc'));
+console.log(path.resolve(__dirname, '..', 'Node.js', '.prettierrc'));
