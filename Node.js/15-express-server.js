@@ -5,9 +5,10 @@ const app = express();
 // le callback sera appelé pour toutes les méthodes HTTP
 // et pour les URL qui commencent par /api/
 app.use('/api', (req, res) => {
-  res.setHeader('Content-type', 'application/json');
-  res.write(JSON.stringify({msg: 'Hello API'}));
-  res.end();
+  // res.setHeader('Content-type', 'application/json');
+  // res.write(JSON.stringify({msg: 'Hello API'}));
+  // res.end();
+  res.json({ msg: 'Hello API' });
 });
 
 // app.all arrive en 2e, il traite les requete qui n'ont
@@ -15,9 +16,18 @@ app.use('/api', (req, res) => {
 // le callback sera appelé pour toutes les méthodes HTTP
 // et pour les URL qui sont exactement /hello
 app.all('/hello', (req, res) => {
-  res.setHeader('Content-type', 'text/html');
-  res.write('<h2>Hello</h2>');
-  res.end();
+  // res.setHeader('Content-type', 'text/html');
+  // res.write('<h2>Hello</h2>');
+  // res.end();
+  res.send('<h2>Hello</h2>');
+});
+
+// Route avec param
+app.get('/hello/:name', (req, res) => {
+  const name = req.params.name;
+  res.json({
+    msg: `Hello ${name}`,
+  });
 });
 
 // le callback sera appelé si la méthode HTTP matche la méthode (fonction) de app
@@ -33,13 +43,18 @@ app.get('/', (req, res) => {
 // app.patch();
 // app.delete();
 
+app.post('/register', express.json(), (req, res) => {
+  console.log(req.body);
+});
+
 // Pour traiter les 404
 // toutes les autres URL
 app.use((req, res) => {
-  res.statusCode = 404;
-  res.setHeader('Content-type', 'text/html');
-  res.write('<h2>Not Found</h2>');
-  res.end();
+  // res.statusCode = 404;
+  // res.setHeader('Content-type', 'text/html');
+  // res.write('<h2>Not Found</h2>');
+  // res.end();
+  res.status(404).send('<h2>Not Found</h2>');
 });
 
 app.listen(4000, () => {
