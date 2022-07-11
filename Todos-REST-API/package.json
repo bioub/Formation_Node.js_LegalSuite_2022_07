@@ -12,6 +12,7 @@
     "eslint": "^7.17.0",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.7",
+    "nyc": "^15.1.0",
     "sinon": "^14.0.0",
     "sinon-chai": "^3.7.0"
   },
@@ -20,6 +21,7 @@
     "start:dev": "nodemon index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "mocha \"**/*.spec.js\" --exclude \"node_modules/**/*.spec.js\""
+    "test": "mocha \"**/*.spec.js\" --exclude \"node_modules/**/*.spec.js\"",
+    "coverage": "nyc --reporter html npm test"
   }
 }

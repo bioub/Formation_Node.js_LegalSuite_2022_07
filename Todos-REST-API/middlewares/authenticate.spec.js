@@ -46,5 +46,22 @@ describe('authenticate function', () => {
   // Tester que si le token n'est pas dans le tableau
   // la réponse soit bien status 401
   // et res.json soit bien appelé avec un objet {msg: 'Unauthorized'}
+  it('should call res.json if token is not valid', () => {
+    const req = {
+      headers: {
+        authorization: 'invalid-token'
+      },
+    };
+    const res = {
+      json: sinon.spy(),
+    };
+    const next = sinon.spy();
+
+    authenticate(req, res, next);
+    expect(res.statusCode).to.equal(401);
+    expect(res.json).to.have.been.calledOnceWith({
+      msg: 'Unauthorized',
+    });
+  });
 
 });
